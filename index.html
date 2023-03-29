@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulazione</title>
+</head>
+<body>
+    <div id="container">
+        <!-- si aspettano nodi -->
+    </div>
+    <form id="new-values">
+        <label for="n">Numero nodi:</label>
+        <input id="n" type="number">
+    <button type="submit">GENERA</button>
+    </form>
+    <style>
+        :root{
+            --container-w: 1200px;
+            --container-h: 900px;
+            --node-w: 10px;
+            --node-h: 10px;
+            --transition-time: 2s;
+        }
+        #container{
+            width: var(--container-w);
+            height: var(--container-h);
+            border: 2px solid rebeccapurple;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .node{
+            width: var(--node-w);
+            height: var(--node-h);
+            background-color: orangered;
+            position: absolute;
+            border-radius: 50%;
+            translate: -50% 50%;
+
+        }
+        .running-node{
+            background-color: blue;
+        }
+
+        .circle{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: transparent;
+            border: 2px solid rgb(0, 255, 76);
+            border-radius: 50%;
+            translate: -50% 50%;
+            animation: animation var(--transition-time) linear;
+        }
+        
+
+        @keyframes animation{
+            0%{
+                width: 0;
+                height: 0;
+            }
+            90%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 0;
+                width: 400px;
+                height: 400px;
+            }
+        }
+
+        .circle_range{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 500px;
+            height: 500px;
+            background-color: transparent;
+            border: 1px dashed rgb(255, 100, 20);
+            border-radius: 50%;
+            translate: -50% 50%;
+        }
+    </style>
+    <script src="script.js"></script>
+    <!-- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" /> -->
+    <!-- <script defer src="https://pyscript.net/latest/pyscript.js"></script> -->
+
+    <!-- P = P_A^(1*10) ⊗ P_B^(2*10) ⊗ P_C^(3*10) -->
+    <!-- <py-script>
+
+    </py-script> -->
+
+</body>
+</html>
